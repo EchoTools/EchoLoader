@@ -1,5 +1,4 @@
 # EchoLoader
----
 
 **Description:**
 EchoLoader is a utility for EchoVR. Rename it to `dbgcore.dll` and place it into the `bin\win10` directory of your EchoVR installation.
@@ -7,7 +6,7 @@ EchoLoader is a utility for EchoVR. Rename it to `dbgcore.dll` and place it into
 ## Usage:
 
 1. **Rename the File:**
-   Rename `EchoLoader.dll` to `dbgcore.dll`.
+   Rename `EchoLoader` to `dbgcore.dll`.
 
 2. **Placement:**
    Copy the renamed `dbgcore.dll` file and place it into the `bin\win10` directory within your EchoVR installation.
@@ -16,5 +15,8 @@ EchoLoader is a utility for EchoVR. Rename it to `dbgcore.dll` and place it into
    - Create a directory named `dlls` in the same location as `dbgcore.dll`.
    - Place any additional DLLs you wish to load into the `dlls` directory.
 
+## Information:
 
----
+**Compiler Requirement:**
+This code utilizes C++17 features. Ensure that your compiler supports C++17 or later.
+
