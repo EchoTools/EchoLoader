@@ -1,19 +1,24 @@
-#include "pch.h"
+#include <windows.h>
 #include <iostream>
 #include <string>
 #include <filesystem>
 
 VOID MAIN() {
-	// Find "dlls" folder within directory 
-	std::filesystem::path DllFolder = std::filesystem::current_path() / "dlls";
+	// If "dlls" folder exists, rename it to "plugins"
+	if (std::filesystem::exists("dlls")) {
+		std::filesystem::rename("dlls", "plugins");
+	}
 
-	// Make sure "dlls" folder exists
+	// Find "plugins" folder within directory 
+	std::filesystem::path DllFolder = std::filesystem::current_path() / "plugins";
+
+	// Make sure "plugins" folder exists
 	if (!std::filesystem::exists(DllFolder)) {
-		// Create dlls folder
+		// Create plugins folder
 		std::filesystem::create_directory(DllFolder);
 	}
 
-	// Iterate through all files in "dlls" folder
+	// Iterate through all files in "plugins" folder
 	for (const auto& entry : std::filesystem::directory_iterator(DllFolder)) {
 		std::string DllPath = entry.path().string();
 
